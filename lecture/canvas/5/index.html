@@ -85,8 +85,9 @@ function animateDot(dot, deltaTime) {
 }
 
 function drawDot(dot) {
+  let dotRadius = 10;
   ctx.beginPath();
-  ctx.arc(dot.x, canvas.height - dot.height, 10, 0, 360);
+  ctx.arc(dot.x, canvas.height - dot.height - dotRadius, dotRadius, 0, 360);
   ctx.fill();
 }
 </code></pre><p>Auch wenn das Beispiel mit einfachen Objekten schon recht gut funktioniert,

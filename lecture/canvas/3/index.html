@@ -69,8 +69,9 @@ function onAnimationFrame() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     // draw dot
+    let dotRadius = 10;
     ctx.beginPath();
-    ctx.arc(dotX, canvas.height - dotHeight, 10, 0, 360);
+    ctx.arc(dotX, canvas.height - dotHeight - dotRadius, dotRadius, 0, 360);
     ctx.fill();
 
     // advance animation time

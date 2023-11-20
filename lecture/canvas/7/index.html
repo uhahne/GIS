@@ -16,10 +16,11 @@ const animatedDots = new Set(); // list of animated dots
 let animationTime = null; // current animation time
 
 class Dot {
-  constructor(x, height) {
+  constructor(x, height, size) {
     this.x = x;
     this.height = height;
     this.speed = 0;
+    this.size = size;
   }
 
   animate(deltaTime) {
@@ -46,7 +47,7 @@ class Dot {
 
   draw(ctx) {
     ctx.beginPath();
-    ctx.arc(this.x, canvas.height - this.height, 10, 0, 360);
+    ctx.arc(this.x, canvas.height - this.height - this.size, this.size, 0, 360);
     ctx.fill();
   }
 }
@@ -59,7 +60,7 @@ function onClick(evt) {
   const y = evt.clientY - canvasClientRect.y;
 
   // create dot
-  const dot = new Dot(x, canvas.height - y);
+  const dot = new Dot(x, canvas.height - y, 10);
 
   // add dot to set of animated dots
   animatedDots.add(dot);
