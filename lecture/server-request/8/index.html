@@ -22,7 +22,7 @@ const port = 3000;
 const server = http.createServer((request, response) =&gt; {
   response.statusCode = 200;
   response.setHeader(&#x27;Content-Type&#x27;, &#x27;text/plain&#x27;);
-  response.setHeader(&#x27;Access-Control-Allow-Origin&#x27;, &#x27;*&#x27;); // bei CORS Fehler
+  response.setHeader(&#x27;Access-Control-Allow-Origin&#x27;, &#x27;*&#x27;); // on CORS error
   const url = new URL(request.url || &#x27;&#x27;, `http://${request.headers.host}`);
   switch (url.pathname) {
     case &#x27;/&#x27;:
