@@ -14,11 +14,11 @@ const color = document.getElementById(&#x27;color&#x27;);
 color.addEventListener(&#x27;input&#x27;, changeTextColor);
 
 async function getAndAttachText(event) {
-  const text = document.createElement(&#x27;p&#x27;);
-  text.textContent = await requestTextWithGET(
+  const paragraph = document.createElement(&#x27;p&#x27;);
+  paragraph.textContent = await requestTextWithGET(
     &#x27;https://uhahne.github.io/GIS/test.txt&#x27;
   );
-  attach.appendChild(text);
+  attach.appendChild(paragraph);
 }
 
 function changeTextColor(event) {
