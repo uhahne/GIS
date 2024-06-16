@@ -68,21 +68,21 @@ startServer();
 
 async function getStudent(studentNr) {
   const response = await fetch(
-    `http://localhost:3000/student?studentNr=${studentNr}`
+    `http://127.0.0.1:3000/student?studentNr=${studentNr}`
   );
   const text = await response.text();
   console.log(JSON.parse(text));
 }
 
-async function getAllStudents(): Promise&lt;void&gt; {
-  const response = await fetch(&#x27;http://localhost:3000/student&#x27;);
+async function getAllStudents() {
+  const response = await fetch(&#x27;http://127.0.0.1:3000/student&#x27;);
   const text = await response.text();
   console.log(JSON.parse(text));
 }
 
 async function test() {
   await addStudent(
-    &#x27;http://localhost:3000/student&#x27;,
+    &#x27;http://127.0.0.1:3000/student&#x27;,
     JSON.stringify({
       studentNr: 111111,
       firstName: &#x27;Adam&#x27;,
