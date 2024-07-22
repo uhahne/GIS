@@ -30,6 +30,7 @@ const server = http.createServer((request, response) =&gt; {
       break;
     case &#x27;/search&#x27;:
       response.write(&#x27;Hier ist was du suchst: &#x27; + url.searchParams.get(&#x27;item&#x27;));
+      break;
     default:
       response.statusCode = 404;
   }
